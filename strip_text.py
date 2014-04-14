@@ -19,7 +19,13 @@ def main():
 
     for l in open(sys.argv[1]):
         (title, js) = l.strip().split('\t')
-        print 'title: {}, js: {}\n'.format(title, json.loads(js))
+        lyrics_list = json.loads(js)
+        print 'title: {}, js: {}\n'.format(title, lyrics_list)
+        retrieved_lyrics = []
+        for lyrics in lyrics_list:
+            retrieved_lyrics.append(retrieve_file(lyrics))
+        with open('{}.lyrics'.format(title), 'w') as w_fh:
+            w_fh.write('{}\n'.format(json.dumps(retrieved_lyrics)))
 
     return
 
