@@ -19,7 +19,7 @@ def main():
 
     for l in open(sys.argv[1]):
         (title, js) = l.strip().split('\t')
-        print 'title: {}, js: {}\n'.format(title, js)
+        print 'title: {}, js: {}\n'.format(title, json.loads(js))
 
     return
 
