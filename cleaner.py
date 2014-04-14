@@ -19,3 +19,4 @@ def clean(list_of_lines):
         if '編曲' in each_line:
             continue
         to_return.append(each_line)
+    return to_return
