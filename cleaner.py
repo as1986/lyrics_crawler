@@ -9,15 +9,15 @@ def clean(list_of_lines):
     for each_line in list_of_lines:
         if each_line.startswith('['):
             continue
-        if '歌詞' in each_line:
+        if u'歌詞' in each_line:
             continue
-        if '演唱' in each_line:
+        if u'演唱' in each_line:
             continue
-        if '作曲' in each_line:
+        if u'作曲' in each_line:
             continue
-        if '作詞' in each_line:
+        if u'作詞' in each_line:
             continue
-        if '編曲' in each_line:
+        if u'編曲' in each_line:
             continue
         to_return.append(each_line)
     return to_return
