@@ -7,7 +7,7 @@ def retrieve_file(partial_url):
     import requests
     from bs4 import BeautifulSoup
 
-    r = requests.get('http://mojim.com/{}'.format(partial_url))
+    r = requests.get('http://mojim.com{}'.format(partial_url))
     soup = BeautifulSoup(r.text)
     ly = soup.select("#fsZ")
     if len(ly) == 0:
