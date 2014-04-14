@@ -9,10 +9,10 @@ def retrieve_file(partial_url):
 
     r = requests.get('http://mojim.com/{}'.format(partial_url))
     soup = BeautifulSoup(r.text)
-    ly = soup.select("#fsZ")[0]
+    ly = soup.select("#fsZ")
     if len(ly) == 0:
         return None
-    raw = [x for x in ly.stripped_strings]
+    raw = [x for x in ly[0].stripped_strings]
     return raw
 
 
