@@ -14,7 +14,7 @@ def main():
             if list_lyrics is not None and len(list_lyrics) > 0:
                 lyr = cleaner.clean(list_lyrics[0])
                 for each_lyrline in lyr:
-                    to_append = ' '.join(each_lyrline.strip())
+                    to_append = ' '.join(each_lyrline.strip()).encode('utf-8')
                     w_fh.write(to_append + '\n')
 
     return
